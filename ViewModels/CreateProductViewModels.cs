@@ -2,21 +2,32 @@ using System.ComponentModel.DataAnnotations;
 
 namespace KodaStore.Api.ViewModels;
 
-public class CreateProductViewModel
+public sealed class CreateProductViewModel
 {
-    [Required(ErrorMessage = "Productcode is Required")]
+    [Required(ErrorMessage = "Kode produk wajib diisi.")]
+    [StringLength(30, ErrorMessage = "Maksimal 30 karakter.")]
+    [RegularExpression(@"^[A-Za-z0-9][A-Za-z0-9_-]*$",
+        ErrorMessage = "Hanya huruf, angka, tanda - dan _.")]
+    [Display(Name = "Kode produk")]
     public string ProductCode { get; set; } = string.Empty;
 
-    [Required(ErrorMessage = "Name is Required")]
+    [Required(ErrorMessage = "Nama produk wajib diisi.")]
+    [StringLength(120, ErrorMessage = "Maksimal 120 karakter.")]
+    [Display(Name = "Nama produk")]
     public string Name { get; set; } = string.Empty;
 
-    [Required(ErrorMessage = "Price is Required")]
-    [Range(0, 9999999999999.99, ErrorMessage = "Price cannot be negative")]
+    [Required(ErrorMessage = "Harga wajib diisi.")]
+    [Range(typeof(decimal), "0", "1000000000000", ErrorMessage = "Harga tidak boleh negatif.")]
+    [Display(Name = "Harga (Rp)")]
     public decimal? Price { get; set; }
 
-    [Required(ErrorMessage = "Stock is Required")]
+    [Required(ErrorMessage = "Stok wajib diisi.")]
+    [Range(0, int.MaxValue, ErrorMessage = "Stok tidak boleh negatif.")]
+    [Display(Name = "Stok")]
     public int? Stock { get; set; }
 
-    [Required(ErrorMessage = "Category is Required")]
+    [Required(ErrorMessage = "Kategori wajib diisi.")]
+    [StringLength(80, ErrorMessage = "Maksimal 80 karakter.")]
+    [Display(Name = "Kategori")]
     public string Category { get; set; } = string.Empty;
 }

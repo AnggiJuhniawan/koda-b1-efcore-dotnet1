@@ -11,12 +11,19 @@
     <header>
         <nav>
             <a asp-controller="Home" asp-action="Index">Home</a>
-            <a asp-controller="Home" asp-action="Index">Catalog</a>
-            <a asp-controller="Home" asp-action="Index">Add Product</a>
+            <a asp-controller="Catalog" asp-action="Index">Catalog</a>
+            <a asp-controller="Catalog" asp-action="Create">Add Product</a>
+            <a href="/api/v1/products" target="_blank" rel="noopener">JSON API</a>
         </nav>
     </header>
 
-    <main>@RenderBody()</main>
+    <main>
+        @if (TempData["Success"] is string message)
+        {
+            <div role="status">@message</div>
+        }
+        @RenderBody()
+    </main>
 
     <footer>
         <p>Koda Store 2026</p>

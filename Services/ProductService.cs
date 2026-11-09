@@ -7,37 +7,100 @@ namespace KodaStore.Api.Services;
 public sealed class ProductService : IProductService
 {
     private readonly IProductRepository _repository;
+
     public ProductService(IProductRepository repository)
     {
         _repository = repository;
     }
-    public ProductResponse? Create(ProductRequest request)
-    {
-        var product = new Product(request.ProductCode, request.Name, request.Price, request.Stock, request.Category);
 
-        return _repository.TryAdd(product) ? ProductResponse.FromModel(product) : null;
+    // 1. READ ALL
+    public async Task<IReadOnlyList<ProductResponse>> GetAllAsync(
+        CancellationToken cancellationToken)
+    {
+        var products = await _repository.GetAllAsync(
+            cancellationToken);
+
+        return products
+            .Select(ProductResponse.FromModel)
+            .ToArray();
     }
 
-    public bool Delete(string productCode)
+    // 2. READ DETAIL
+    public async Task<ProductResponse?> GetByCodeAsync(
+        string productCode,
+        CancellationToken cancellationToken)
     {
-        return _repository.TryDelete(productCode);
+        if (string.IsNullOrWhiteSpace(productCode)
+            || productCode.Trim().Length > 30)
+        {
+            return null;
+        }
+
+        var product = await _repository.GetByCodeAsync(
+            productCode,
+            cancellationToken);
+
+        return product is null
+            ? null
+            : ProductResponse.FromModel(product);
     }
 
-    public IReadOnlyList<ProductResponse> GetAll()
+    // 3. CREATE
+    public async Task<ProductResponse?> CreateAsync(
+        ProductRequest request,
+        CancellationToken cancellationToken)
     {
-        return _repository.GetAll().Select(ProductResponse.FromModel).ToArray();
+        var product = new Product(
+            request.ProductCode,
+            request.Name,
+            request.Price,
+            request.Stock,
+            request.Category);
+
+        var created = await _repository.TryAddAsync(
+            product,
+            cancellationToken);
+
+        return created
+            ? ProductResponse.FromModel(product)
+            : null;
     }
 
-    public ProductResponse? GetByCode(string productCode)
+    // 4. UPDATE
+    public async Task<ProductResponse?> UpdateAsync(
+        string productCode,
+        UpdateProductRequest request,
+        CancellationToken cancellationToken)
     {
-        var product = _repository.GetByCode(productCode);
-        return product is null ? null : ProductResponse.FromModel(product);
+        var product = new Product(
+            productCode,
+            request.Name,
+            request.Price,
+            request.Stock,
+            request.Category);
+
+        var updated = await _repository.TryUpdateAsync(
+            product,
+            cancellationToken);
+
+        return updated
+            ? ProductResponse.FromModel(product)
+            : null;
     }
 
-    public ProductResponse? Update(string productCode, UpdateProductRequest request)
+    // 5. DELETE
+    public Task<bool> DeleteAsync(
+        string productCode,
+        CancellationToken cancellationToken)
     {
-        var product = new Product(productCode, request.Name, request.Price, request.Stock, request.Category);
+        if (string.IsNullOrWhiteSpace(productCode)
+            || productCode.Trim().Length > 30)
+        {
+            return Task.FromResult(false);
+        }
 
-        return _repository.TryUpdate(product) ? ProductResponse.FromModel(product) : null;
+        return _repository.TryDeleteAsync(
+            productCode,
+            cancellationToken);
     }
 }

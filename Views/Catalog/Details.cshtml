@@ -1,0 +1,47 @@
+@model ProductResponse
+@using System.Globalization
+@{
+    ViewData["Title"] = "Product Detail";
+    var rupiah = CultureInfo.GetCultureInfo("id-ID");
+}
+<div>
+    <h1>PRODUCT DETAIL</h1>
+    <h3>@Model.Name</h3>
+    <p class="muted">Kode: @Model.ProductCode</p>
+    <a asp-action="Index">Kembali</a>
+</div>
+
+<section>
+    <dl>
+        <div>
+            <dt>Kode produk</dt>
+            <dd><code>@Model.ProductCode</code></dd>
+        </div>
+        <div>
+            <dt>Nama</dt>
+            <dd>@Model.Name</dd>
+        </div>
+        <div>
+            <dt>Kategori</dt>
+            <dd>@Model.Category</dd>
+        </div>
+        <div>
+            <dt>Harga</dt>
+            <dd>@Model.Price.ToString("C0", rupiah)</dd>
+        </div>
+        <div>
+            <dt>Stok</dt>
+            <dd>@Model.Stock</dd>
+        </div>
+        <div>
+            <dt>Status stok</dt>
+            <dd>
+                <partial name="_StockBadge" model="@Model.Stock" />
+            </dd>
+        </div>
+    </dl>
+    <div>
+        <a asp-action="Edit" asp-route-productCode="@Model.ProductCode">Edit Produk</a>
+        <a asp-action="Delete" asp-route-productCode="@Model.ProductCode">Hapus Produk</a>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+@model ProductResponse
+@{
+    ViewData["Title"] = "Delete Product";
+}
+<div>
+    <h1>Delete Product</h1>
+</div>
+
+<section>
+    <div role="alert">Delete <strong>@Model.Name</strong> (kode @Model.ProductCode)? </div>
+    <dl>
+        <div>
+            <dt>Kode</dt>
+            <dd>@Model.ProductCode</dd>
+        </div>
+        <div>
+            <dt>Nama</dt>
+            <dd>@Model.Name</dd>
+        </div>
+        <div>
+            <dt>Stok</dt>
+            <dd>@Model.Stock</dd>
+        </div>
+    </dl>
+    <form asp-controller="Catalog" asp-action="DeleteConfirmed" asp-route-productCode="@Model.ProductCode"
+          method="post">
+        <div>
+            <button type="submit">Yes, Delete Product</button>
+            <a asp-action="Details" asp-route-productCode="@Model.ProductCode">Cancel</a>
+        </div>
+    </form>
+</section>

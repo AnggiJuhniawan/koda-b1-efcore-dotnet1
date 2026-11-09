@@ -1,48 +1,64 @@
+@model IReadOnlyList<ProductResponse>
 @using System.Globalization
-@model IReadOnlyList<KodaStore.Api.DTOs.ProductResponse>
-
 @{
-    Layout = null;
-    ViewData["Title"] = "Catalog Page";
+    ViewData["Title"] = "Katalog Produk";
     var rupiah = CultureInfo.GetCultureInfo("id-ID");
 }
-<button><a asp-action="Create">Add Product</a></button>
-<table border="1">
-    <tr>
-        <th>Product Code</th>
-        <th>Product</th>
-        <th>Category</th>
-        <th>Price</th>
-        <th>Stock</th>
-    </tr>
-    <tbody>
-        @if (Model.Count == 0)
-        {
-            <tr>
-                <td>Belum ada Product</td>
-            </tr>
-        }
-        else
-        {
-            @foreach (var product in Model)
-            {
+<div class="page-heading">
+    <div>
+        <span class="eyebrow">PRODUCT MANAGEMENT</span>
+        <h1>Katalog Produk</h1>
+        <p class="muted">Total produk: <strong>@Model.Count</strong> · Data masih in-memory</p>
+    </div>
+    <a class="button primary" asp-action="Create">+ Tambah Produk</a>
+</div>
+<div class="card table-card">
+    <div class="table-scroll">
+        <table>
+            <thead>
                 <tr>
-                    <td>@product.ProductCode</td>
-                    <td>@product.Name</td>
-                    <td>@product.Category</td>
-                    <td>@product.Price.ToString("C0", rupiah)</td>
-                    <td>@product.Stock</td>
-                    <td>
-                        <a asp-action="Details" asp-route-productCode="@product.ProductCode">Details</a>
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-productCode="@product.ProductCode">Edit</a>
-                    </td>
-                    <td>
-                        <a asp-action="Delete" asp-route-productCode="@product.ProductCode">Delete</a>
-                    </td>
+                    <th>Kode</th>
+                    <th>Nama produk</th>
+                    <th>Kategori</th>
+                    <th>Harga</th>
+                    <th>Stok</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
                 </tr>
-            }
-        }
-    </tbody>
-</table>
+            </thead>
+            <tbody>
+                @if (Model.Count == 0)
+                {
+                    <tr>
+                        <td class="empty" colspan="7">Belum ada produk. <a asp-action="Create">Tambahkan produk pertama</a>.
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var product in Model)
+                    {
+                        <tr>
+                            <td><code>@product.ProductCode</code></td>
+                            <td><strong>@product.Name</strong></td>
+                            <td>@product.Category</td>
+                            <td>@product.Price.ToString("C0", rupiah)</td>
+                            <td>@product.Stock</td>
+                            <td>
+                                <partial name="_StockBadge" model="@product.Stock" />
+                            </td>
+                            <td>
+                                <div class="actions">
+                                    <a asp-action="Details" asp-route-productCode="@product.ProductCode">Detail</a>
+                                    <a asp-action="Edit" asp-route-productCode="@product.ProductCode">Edit</a>
+                                    <a class="danger-link" asp-action="Delete"
+                                       asp-route-productCode="@product.ProductCode">Hapus</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

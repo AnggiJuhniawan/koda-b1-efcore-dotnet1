@@ -1,23 +1,23 @@
-using KodaStore.Api.Data;
-using KodaStore.Api.Models;
+// using KodaStore.Api.Data;
+// using KodaStore.Api.Models;
 
-namespace KodaStore.Api.Repositories;
+// namespace KodaStore.Api.Repositories;
 
-public sealed class InMemoryProductRepository : IProductRepository
-{
-    private readonly InMemoryProductCatalog _catalog;
+// public sealed class InMemoryProductRepository : IProductRepository
+// {
+//     private readonly InMemoryProductCatalog _catalog;
 
-    public InMemoryProductRepository(InMemoryProductCatalog catalog)
-    {
-        _catalog = catalog;
-    }
-    public IReadOnlyList<Product> GetAll() => _catalog.GetAll();
+//     public InMemoryProductRepository(InMemoryProductCatalog catalog)
+//     {
+//         _catalog = catalog;
+//     }
+//     public IReadOnlyList<Product> GetAll() => _catalog.GetAll();
 
-    public Product? GetByCode(string productCode) => _catalog.GetByCode(productCode);
+//     public Product? GetByCode(string productCode) => _catalog.GetByCode(productCode);
 
-    public bool TryAdd(Product product) => _catalog.TryCreateProduct(product);
+//     public bool TryAdd(Product product) => _catalog.TryCreateProduct(product);
 
-    public bool TryDelete(string productCode) => _catalog.TryRemove(productCode);
+//     public bool TryDelete(string productCode) => _catalog.TryRemove(productCode);
 
-    public bool TryUpdate(Product product) => _catalog.TryUpdateProduct(product);
-}
+//     public bool TryUpdate(Product product) => _catalog.TryUpdateProduct(product);
+// }

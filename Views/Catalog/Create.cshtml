@@ -1,37 +1,41 @@
 @model CreateProductViewModel
-
 @{
-    ViewData["Title"] = "Tambah Product";
+    ViewData["Title"] = "Add Product";
 }
-
-<h1>Tambah Product</h1>
-<form asp-controller="Catalog" asp-action="Create" method="post">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for=""></label>
-        <input asp-for="ProductCode" />
-        <span asp-validation-for="ProductCode"></span>
-    </div>
-    <div>
-        <label asp-for=""></label>
-        <input asp-for="Name" />
-        <span asp-validation-for="Name"></span>
-    </div>
-    <div>
-        <label asp-for=""></label>
-        <input asp-for="Price" type="number" min="0" />
-        <span asp-validation-for="Price"></span>
-    </div>
-    <div>
-        <label asp-for=""></label>
-        <input asp-for="Stock" type="number" min="0" />
-        <span asp-validation-for="Stock"></span>
-    </div>
-    <div>
-        <label asp-for=""></label>
-        <input asp-for="Category" />
-        <span asp-validation-for="Category"></span>
-    </div>
-
-    <button type="submit">Save Product</button>
-</form>
+<h1>Add Product</h1>
+<section>
+    <form asp-controller="Catalog" asp-action="Create" method="post" data-validate-form>
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <div>
+                <label asp-for="ProductCode"></label>
+                <input asp-for="ProductCode" placeholder="Masukkan ProductCode" autocomplete="off" />
+                <span asp-validation-for="ProductCode"></span>
+            </div>
+            <div>
+                <label asp-for="Name"></label>
+                <input asp-for="Name" placeholder="Masukkan Name Product" />
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div>
+                <label asp-for="Price"></label>
+                <input asp-for="Price" type="number" min="0" step="0.01" placeholder="Masukkan price" />
+                <span asp-validation-for="Price"></span>
+            </div>
+            <div>
+                <label asp-for="Stock"></label>
+                <input asp-for="Stock" type="number" min="0" step="1" placeholder="Masukkan stock" />
+                <span asp-validation-for="Stock"></span>
+            </div>
+            <div>
+                <label asp-for="Category"></label>
+                <input asp-for="Category" placeholder="Elektronik" />
+                <span asp-validation-for="Category"></span>
+            </div>
+        </div>
+        <div>
+            <button type="submit">Simpan Produk</button>
+            <a asp-action="Index">Batal</a>
+        </div>
+    </form>
+</section>

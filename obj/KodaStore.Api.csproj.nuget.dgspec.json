@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User01\\Documents\\_DATA D\\Batch 1\\Example\\WEEK 4\\WEEK 4\\DOTNET2\\src\\KodaStore.Api\\KodaStore.Api.csproj": {}
+    "C:\\Users\\User01\\Documents\\_DATA D\\Batch 1\\Example\\WEEK 5\\DOTNET2_Day 3\\src\\KodaStore.Api\\KodaStore.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User01\\Documents\\_DATA D\\Batch 1\\Example\\WEEK 4\\WEEK 4\\DOTNET2\\src\\KodaStore.Api\\KodaStore.Api.csproj": {
+    "C:\\Users\\User01\\Documents\\_DATA D\\Batch 1\\Example\\WEEK 5\\DOTNET2_Day 3\\src\\KodaStore.Api\\KodaStore.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User01\\Documents\\_DATA D\\Batch 1\\Example\\WEEK 4\\WEEK 4\\DOTNET2\\src\\KodaStore.Api\\KodaStore.Api.csproj",
+        "projectUniqueName": "C:\\Users\\User01\\Documents\\_DATA D\\Batch 1\\Example\\WEEK 5\\DOTNET2_Day 3\\src\\KodaStore.Api\\KodaStore.Api.csproj",
         "projectName": "KodaStore.Api",
-        "projectPath": "C:\\Users\\User01\\Documents\\_DATA D\\Batch 1\\Example\\WEEK 4\\WEEK 4\\DOTNET2\\src\\KodaStore.Api\\KodaStore.Api.csproj",
+        "projectPath": "C:\\Users\\User01\\Documents\\_DATA D\\Batch 1\\Example\\WEEK 5\\DOTNET2_Day 3\\src\\KodaStore.Api\\KodaStore.Api.csproj",
         "packagesPath": "C:\\Users\\User01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User01\\Documents\\_DATA D\\Batch 1\\Example\\WEEK 4\\WEEK 4\\DOTNET2\\src\\KodaStore.Api\\obj\\",
+        "outputPath": "C:\\Users\\User01\\Documents\\_DATA D\\Batch 1\\Example\\WEEK 5\\DOTNET2_Day 3\\src\\KodaStore.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User01\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -53,6 +53,16 @@
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[7.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[10.0.14, )"
             }
           },
           "imports": [

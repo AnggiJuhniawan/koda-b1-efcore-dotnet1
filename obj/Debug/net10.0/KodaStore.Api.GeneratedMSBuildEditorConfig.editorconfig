@@ -1,48 +1,72 @@
 is_global = true
 build_property.TargetFramework = net10.0
-build_property.TargetFrameworkIdentifier = .NETCoreApp
-build_property.TargetFrameworkVersion = v10.0
+build_property.TargetFramework = net10.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
-build_property.EntryPointFilePath = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.EntryPointFilePath = 
 build_property.RootNamespace = KodaStore.Api
 build_property.RootNamespace = KodaStore.Api
-build_property.ProjectDir = C:\Users\User01\Documents\_DATA D\Batch 1\Example\WEEK 4\WEEK 4\DOTNET2\src\KodaStore.Api\
+build_property.ProjectDir = C:\Users\User01\Documents\_DATA D\Batch 1\Example\WEEK 5\DOTNET2_Day 3\src\KodaStore.Api\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\User01\Documents\_DATA D\Batch 1\Example\WEEK 4\WEEK 4\DOTNET2\src\KodaStore.Api
+build_property.MSBuildProjectDirectory = C:\Users\User01\Documents\_DATA D\Batch 1\Example\WEEK 5\DOTNET2_Day 3\src\KodaStore.Api
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 4/WEEK 4/DOTNET2/src/KodaStore.Api/Views/Catalog/Create.cshtml]
+[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 5/DOTNET2_Day 3/src/KodaStore.Api/Views/Catalog/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 4/WEEK 4/DOTNET2/src/KodaStore.Api/Views/Catalog/Index.cshtml]
+[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 5/DOTNET2_Day 3/src/KodaStore.Api/Views/Catalog/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 5/DOTNET2_Day 3/src/KodaStore.Api/Views/Catalog/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 5/DOTNET2_Day 3/src/KodaStore.Api/Views/Catalog/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 5/DOTNET2_Day 3/src/KodaStore.Api/Views/Catalog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 4/WEEK 4/DOTNET2/src/KodaStore.Api/Views/Index.cshtml]
+[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 5/DOTNET2_Day 3/src/KodaStore.Api/Views/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 4/WEEK 4/DOTNET2/src/KodaStore.Api/Views/Shared/_Layout.cshtml]
+[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 5/DOTNET2_Day 3/src/KodaStore.Api/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 4/WEEK 4/DOTNET2/src/KodaStore.Api/Views/_ViewImports.cshtml]
+[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 5/DOTNET2_Day 3/src/KodaStore.Api/Views/Shared/_StockBadge.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdG9ja0JhZGdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 5/DOTNET2_Day 3/src/KodaStore.Api/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 4/WEEK 4/DOTNET2/src/KodaStore.Api/Views/_ViewStart.cshtml]
+[C:/Users/User01/Documents/_DATA D/Batch 1/Example/WEEK 5/DOTNET2_Day 3/src/KodaStore.Api/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
