@@ -45,6 +45,10 @@ public sealed class AppDbContext : DbContext
             entity.Property(p => p.Category)
                 .HasMaxLength(30)
                 .IsRequired();
+
+            entity.Property(p => p.Description)
+                .HasMaxLength(500)
+                .IsRequired(false);
         });
     }
 }

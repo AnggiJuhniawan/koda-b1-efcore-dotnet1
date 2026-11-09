@@ -8,7 +8,7 @@ GET {{baseUrl}}/api/v1/products
 Accept: application/json
 
 ### Get Product By Code
-GET {{baseUrl}}/api/v1/products/PR001
+GET {{baseUrl}}/api/v1/products/P001
 Accept: application/json
 
 ### POST Product
@@ -25,7 +25,7 @@ Content-Type: application/json
 }
 
 ### UPDATE DATA
-PUT {{baseUrl}}/api/v1/products/PR001
+PUT {{baseUrl}}/api/v1/products/P001
 Accept: application/json
 Content-Type: application/json
 
@@ -37,5 +37,5 @@ Content-Type: application/json
 }
 
 ### Delete Product
-DELETE {{baseUrl}}/api/v1/products/PR001
+DELETE {{baseUrl}}/api/v1/products/P001
 Accept: application/json

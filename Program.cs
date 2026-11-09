@@ -18,9 +18,12 @@ builder.Services.AddProblemDetails();
 // builder.Services.AddSingleton<IProductService, ProductService>();
 
 // Repository SQL Server
-builder.Services.AddScoped<
-    IProductRepository,
-    SqlProductRepository>();
+// builder.Services.AddScoped<
+//     IProductRepository,
+//     SqlProductRepository>();
+
+// EFCORE REPOSITORY
+builder.Services.AddScoped<IProductRepository, EfProductRepository>();
 
 // Business/Application Service
 builder.Services.AddScoped<

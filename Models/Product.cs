@@ -10,8 +10,9 @@ public sealed class Product
     public decimal Price { get; private set; }
     public int Stock { get; private set; }
     public string Category { get; private set; }
+    public string? Description { get; private set; }
 
-    public Product(string productCode, string name, decimal price, int stock, string category)
+    public Product(string productCode, string name, decimal price, int stock, string category, string? description = null)
     {
         if (string.IsNullOrWhiteSpace(productCode) || productCode.Trim().Length > 30)
         {
@@ -38,15 +39,17 @@ public sealed class Product
         Price = price;
         Stock = stock;
         Category = category.Trim();
+        Description = description;
     }
 
-    public void UpdateDetail(string name, decimal price, int stock, string category)
+    public void UpdateDetail(string name, decimal price, int stock, string category, string? description)
     {
-        var validated = new Product(ProductCode, name, price, stock, category);
+        var validated = new Product(ProductCode, name, price, stock, category, description);
 
         Name = validated.Name;
         Price = validated.Price;
         Stock = validated.Stock;
         Category = validated.Category;
+        Description = validated?.Description;
     }
 }

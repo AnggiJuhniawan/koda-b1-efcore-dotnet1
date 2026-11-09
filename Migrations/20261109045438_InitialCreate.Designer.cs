@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KodaStore.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261109041511_InitialCreate")]
+    [Migration("20261109045438_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
