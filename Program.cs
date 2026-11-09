@@ -1,6 +1,7 @@
 // using KodaStore.Api.Data;
 using KodaStore.Api.Data;
 using KodaStore.Api.Repositories;
+using KodaStore.Api.Seeding;
 using KodaStore.Api.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,12 +31,15 @@ builder.Services.AddScoped<
     IProductService,
     ProductService>();
 
+// DBCONTEXT
 var connectionString = builder.Configuration.GetConnectionString("ecommercedb")
         ?? throw new InvalidOperationException("ConnectionString : Belum dikonfigurasi");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    options.UseSqlServer(connectionString);
+    options.UseSqlServer(connectionString)
+        .UseSeeding((context, _) => ProductSeedData.Seed(context))
+        .UseAsyncSeeding((context, _, ct) => ProductSeedData.SeedAsync(context, ct));
 });
 
 var app = builder.Build();
